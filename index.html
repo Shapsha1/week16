@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Регистрация</title>
+        <link rel="stylesheet" href="assets/style2.css" />
+    </head>
+    <body>
+        <h1 class="title">Форма регистрации</h1>
+        <form name="registrationForm" class="form">
+            <label for="inputName" class="form__label">Имя:</label>
+            <input
+                type="text"
+                name="inputName"
+                id="inputName"
+                placeholder="Введите имя"
+                pattern="^[a-zA-Z ]{2,20}$"
+                required
+                class="form__input"
+            />
+            <span class="form__error" id="nameError"></span>
+            <!-- имя - обязательно, только буквы и пробелы, 2-20 симв, placeholder, required -->
+            <label for="inputEmail" class="form__label">Email:</label>
+            <input
+                type="email"
+                name="inputEmail"
+                id="inputEmail"
+                placeholder="Введите почту"
+                required
+                class="form__input"
+            />
+            <span class="form__error" id="emailError"></span>
+            <!-- email - обязатьельно, форматат email, placeholder required -->
+            <label for="inputAge" class="form__label">Возраст:</label>
+            <input
+                type="number"
+                name="inputAge"
+                id="inputAge"
+                placeholder="Введите возраст"
+                required
+                class="form__input"
+            />
+            <span class="form__error" id="ageError"></span>
+            <!-- возраст - обязательно, placeholder, required -->
+            <div>
+                <label for="inputGenderMale" class="form__label">Пол:</label>
+                <br />
+                <input
+                    type="radio"
+                    name="inputGender"
+                    id="inputGenderMale"
+                    value="Мужской"
+                    required
+                    class="form__radio"
+                />
+                <span>Мужской</span>
+                <br />
+                <input type="radio" name="inputGender" id="inputGenderFemale" value="Женский" class="form__radio" />
+                <span>Женский</span>
+            </div>
+            <span class="form__error" id="genderError"></span>
+            <!-- пол - radio buttons-->
+            <label for="inputJob" class="form__label">Профессия:</label>
+            <select name="inputJob" id="inputJob" required class="form__select">
+                <option value="" disabled selected>Выберите опцию</option>
+                <option value="Врач">Врач</option>
+                <option value="Программист">Программист</option>
+                <option value="Учитель">Учитель</option>
+                <option value="Дизайнер">Дизайнер</option>
+                <option value="Инженер">Инженер</option>
+                <option value="Продавец">Продавец</option>
+                <option value="Другое">Другое</option>
+            </select>
+            <span class="form__error" id="jobError"></span>
+            <!-- профессия - обязатлеьно, select, placeholder, required-->
+            <label for="inputPassword" class="form__label">Пароль:</label>
+            <input
+                type="password"
+                name="inputPassword"
+                id="inputPassword"
+                placeholder="Введите пароль"
+                required
+                minlength="8"
+                class="form__input"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d._]+$"
+            />
+            <span class="form__error" id="passwordError"></span>
+            <!-- пароль - обязательно, 8> символов, минимум одна заглавная буква, одну строчная буква и одна цифра, placeholder, required, minlength, pattern -->
+            <label for="inputConsent" class="form__label">
+                <input type="checkbox" name="inputConsent" id="inputConsent" required class="form__checkbox" /> Я
+                согласен на обработку персональных данных</label
+            >
+            <span class="form__error" id="consentError"></span>
+            <!--  checkbox - required -->
+            <input type="submit" value="Отправить" class="form__button" name="submitBtn" disabled />
+            <!-- кнопка отправки формы -->
+        </form>
+        <script src="index.js"></script>
+    </body>
+</html>
